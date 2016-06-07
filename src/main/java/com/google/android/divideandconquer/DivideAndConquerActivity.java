@@ -166,6 +166,7 @@ public class DivideAndConquerActivity extends Activity
             } else {
                 mBallsView.postDelayed(mLivesBlinkRedRunnable, 700);
             }
+            ballEngine.addNewBallToRegion((BallRegion) ball.getRegion(), x, y);
         }
     }
 

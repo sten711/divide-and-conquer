@@ -15,6 +15,7 @@
  */
 package com.google.android.divideandconquer;
 
+import android.os.SystemClock;
 import android.util.Log;
 
 import java.util.List;
@@ -106,6 +107,19 @@ public class BallEngine {
         region.setCallBack(mCallBack);
 
         mRegions.add(region);
+    }
+
+
+    public void addNewBallToRegion(BallRegion ballRegion, float x, float y) {
+        Ball ball = new Ball.Builder()
+                .setNow(SystemClock.elapsedRealtime())
+                .setAngle(Math.random() * 2 * Math.PI)
+                .setX(x)
+                .setY(y)
+                .setRadiusPixels(mBallRadius)
+                .create();
+        ball.setRegion(ballRegion);
+        ballRegion.getBalls().add(ball);
     }
 
     public List<BallRegion> getRegions() {
