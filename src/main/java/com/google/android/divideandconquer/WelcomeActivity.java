@@ -53,7 +53,7 @@ public class WelcomeActivity extends Activity implements NewGameCallback, Divide
     }
 
     @Override
-    public void onBallHitsMovingLine(BallEngine ballEngine, float x, float y) {
+    public void onBallHitsMovingLine(BallEngine ballEngine, float x, float y, Ball ball) {
         /* ignore */
     }
 
